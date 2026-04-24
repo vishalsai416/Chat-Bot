@@ -1,0 +1,261 @@
+.pageShell {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 56px;
+}
+
+.hero {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.9fr);
+  align-items: stretch;
+}
+
+.heroCopy,
+.roleCard,
+.promptPanel,
+.chatPanel {
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.heroCopy {
+  padding: 36px;
+}
+
+.eyebrow,
+.cardLabel,
+.panelTitle,
+.messageRole {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--accent-deep);
+}
+
+.hero h1 {
+  margin: 14px 0 12px;
+  font-size: clamp(2.4rem, 4vw, 4.6rem);
+  line-height: 0.95;
+  max-width: 12ch;
+}
+
+.heroText,
+.roleSummary,
+.panelSubtitle,
+.helperText,
+.messageBody,
+.errorText {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.focusRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.focusChip {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(197, 99, 47, 0.12);
+  color: var(--accent-deep);
+}
+
+.roleCard {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.select,
+.textarea,
+.primaryButton,
+.secondaryButton,
+.promptButton {
+  border: 1px solid transparent;
+  border-radius: 18px;
+}
+
+.select,
+.textarea {
+  width: 100%;
+  background: var(--panel-strong);
+  color: var(--foreground);
+  border-color: var(--border);
+  padding: 14px 16px;
+}
+
+.workspace {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+  margin-top: 20px;
+}
+
+.promptPanel,
+.chatPanel {
+  padding: 24px;
+}
+
+.promptList {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.promptButton {
+  padding: 16px;
+  background: #fff7ef;
+  text-align: left;
+  color: var(--foreground);
+  border-color: rgba(197, 99, 47, 0.14);
+  cursor: pointer;
+  transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.promptButton:hover,
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-1px);
+}
+
+.chatPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 680px;
+}
+
+.chatHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.assistantMessage,
+.userMessage {
+  max-width: min(88%, 700px);
+  padding: 16px 18px;
+  border-radius: 22px;
+  white-space: pre-wrap;
+}
+
+.assistantMessage {
+  background: #fff7ef;
+  border: 1px solid rgba(197, 99, 47, 0.18);
+}
+
+.userMessage {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #b35321 0%, #d6793b 100%);
+  color: white;
+}
+
+.userMessage .messageRole,
+.userMessage .messageBody {
+  color: white;
+}
+
+.composer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.composerFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 12px 18px;
+  cursor: pointer;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, #b35321 0%, #d6793b 100%);
+  color: white;
+}
+
+.primaryButton:disabled {
+  opacity: 0.64;
+  cursor: progress;
+}
+
+.secondaryButton {
+  background: transparent;
+  border-color: var(--border);
+}
+
+.errorText {
+  color: #8c2f1c;
+}
+
+@media (max-width: 920px) {
+  .hero,
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .chatPanel {
+    min-height: 560px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pageShell {
+    width: min(100% - 20px, 1200px);
+    padding-top: 20px;
+  }
+
+  .heroCopy,
+  .roleCard,
+  .promptPanel,
+  .chatPanel {
+    border-radius: 22px;
+  }
+
+  .heroCopy,
+  .promptPanel,
+  .chatPanel,
+  .roleCard {
+    padding: 20px;
+  }
+
+  .composerFooter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .assistantMessage,
+  .userMessage {
+    max-width: 100%;
+  }
+}

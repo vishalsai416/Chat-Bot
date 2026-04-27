@@ -1,6 +1,6 @@
 # RolePilot AI
 
-RolePilot AI is a starter full-stack app for role-based career chatbot. It is designed to feel like a focused guide for a specific job path instead of a generic assistant.
+RolePilot AI is a starter full-stack app for a role-based career chatbot. It is designed to feel like a focused guide for a specific job path instead of a generic assistant.
 
 ## MVP included
 

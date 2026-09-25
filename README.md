@@ -4,7 +4,7 @@ RolePilot AI is a starter full-stack app for a role-based career chatbot. It is 
 
 ## MVP included
 
-- Next.js app-router project structure
+- Next.js app-router project structure.
 - Role selector for different  career tracks
 - Chat interface with local conversation persistence
 - Quick-start prompts based on the selected role
